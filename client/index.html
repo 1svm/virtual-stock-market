@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat Application</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/app.js"></script>
+</head>
+<body>
+  <h1>Welcome to Chat App</h1>
+  <form action="/api/users/login" method="post">
+    <div>
+      <label for="email">
+        Email: <input id="email" type="text">
+      </label>
+    </div>
+    <div>
+      <label for="password">
+        Password: <input id="password" type="password">
+      </label>
+    </div>
+    <div>
+      <input type="submit" value="Send">
+    </div>
+  </form>
+</body>
+</html>

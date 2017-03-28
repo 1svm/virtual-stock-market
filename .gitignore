@@ -1,0 +1,8 @@
+.env
+winston.log
+npm-debug.log
+node_modules/
+.git/
+.idea/
+leveldb_data/
+mongodb_data/
