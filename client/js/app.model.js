@@ -1,0 +1,2 @@
+var memoList = [];
+var userList = [];

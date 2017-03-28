@@ -2,26 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Chat Application</title>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/js/app.js"></script>
+  <title>Document</title>
 </head>
 <body>
-  <h1>Welcome to Chat App</h1>
-  <form action="/api/users/login" method="post">
+
+<form name="signUp">
+  <fieldset>
+    <legend>Sign Up</legend>
+
+    <div>
+      <label for="name">
+        Name : <input id="name" name="name" type="text">
+      </label>
+    </div>
+
     <div>
       <label for="email">
-        Email: <input id="email" type="text">
+        Email : <input id="email" name="email" type="text">
       </label>
     </div>
+
     <div>
-      <label for="password">
-        Password: <input id="password" type="password">
+      <label for="phone">
+        Phone : <input id="phone" name="phone" type="text">
       </label>
     </div>
+
     <div>
-      <input type="submit" value="Send">
+      <input type="submit">
     </div>
-  </form>
+  </fieldset>
+</form>
+
+<script src="js/lib/uuid.min.js"></script>
+<script src="js/lib/dexie.min.js"></script>
+<script src="js/app.constants.js"></script>
+<script src="js/app.model.js"></script>
+<script src="js/User.factory.js"></script>
+<script src="js/Memo.factory.js"></script>
+<script>
+
+  var $signUpForm = document.forms.namedItem('signUp');
+  $signUpForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var $name = $signUpForm[1].value;
+    var $email = $signUpForm[2].value;
+    var $phone = $signUpForm[3].value;
+
+    var user = User.create($name, $email, $phone);
+		user.addMemo('Watch Movie', 'with friends');
+		console.log(userList);
+		console.log(memoList);
+  });
+
+</script>
 </body>
 </html>
